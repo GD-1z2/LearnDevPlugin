@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Java",
+        "aliases": [],
+        "description": "Java est un langage de programmation orienté objet créé en 1995.",
+        "image": "",
+        "resources": [
+            "https://koor.fr/Java/Tutorial/Index.wp",
+            "https://www.jmdoudoux.fr/accueil_java.htm"
+        ],
+        "authors": [
+            "431506320311451651"
+        ]
+    }
+]

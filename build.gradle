@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'fr.caemur'
+version '1.0'
+
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    implementation 'com.github.Ordinal-Team:OrdinalBot-API:v0.0.2'
+
+    implementation('net.dv8tion:JDA:5.0.0-alpha.5') {
+        exclude module: 'opus-java'
+    }
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+}
