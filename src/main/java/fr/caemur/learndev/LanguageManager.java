@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,9 +17,9 @@ public class LanguageManager {
     public LanguageManager(Main plugin) throws IOException {
         this.plugin = plugin;
 
-        languages = plugin.getGson().fromJson(
+        languages = Arrays.asList(plugin.getGson().fromJson(
                 new JsonReader(new InputStreamReader(new FileInputStream(Main.LANGUAGES_FILE), StandardCharsets.UTF_8)),
-                Language[].class);
+                Language[].class));
     }
 
     /**
