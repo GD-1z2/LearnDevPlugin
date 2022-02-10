@@ -35,7 +35,7 @@ public class LearnCommand extends Command {
             return;
         }
 
-        final var language = plugin.getLanguageManager().byName(args[0]);
+        final Language language = plugin.getLanguageManager().byName(args[0]);
 
         if (language == null) {
             event.getMessage().replyEmbeds(new EmbedBuilder()
@@ -49,11 +49,13 @@ public class LearnCommand extends Command {
             return;
         }
 
-        final var embed = new EmbedBuilder()
+        final EmbedBuilder embed = new EmbedBuilder()
                 .setTitle(language.name)
                 .setDescription(language.description)
-                .setThumbnail(language.image)
                 .setColor(ColorHelper.DONE);
+
+        if (!language.image.isEmpty())
+            embed.setThumbnail(language.image);
 
         embed.addField(
                 "Ressources",
