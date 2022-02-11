@@ -19,7 +19,7 @@ public class LearnCommand extends Command {
 
     @Override
     public void run(MessageReceivedEvent event, String[] args) {
-        if (args.length != 1) {
+        if (args.length != 2) {
             event.getMessage().replyEmbeds(new EmbedBuilder()
                     .setTitle("Nombre de paramètre invalide")
                     .setDescription(SYNTAX)
@@ -35,7 +35,7 @@ public class LearnCommand extends Command {
             return;
         }
 
-        final Language language = plugin.getLanguageManager().byName(args[0]);
+        final Language language = plugin.getLanguageManager().byName(args[1]);
 
         if (language == null) {
             event.getMessage().replyEmbeds(new EmbedBuilder()
@@ -60,7 +60,7 @@ public class LearnCommand extends Command {
         embed.addField(
                 "Ressources",
                 language.resources.stream()
-                        .map(s -> " - " + s)
+                        .map(s -> "- " + s)
                         .collect(Collectors.joining("\n")),
                 false);
 
