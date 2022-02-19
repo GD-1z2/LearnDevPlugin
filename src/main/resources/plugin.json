@@ -1,6 +1,6 @@
 {
-    "name": "Learn Programming",
-    "main": "fr.caemur.learndev.Main",
-    "version": "1.0.0",
+    "name": "LearnDev",
+    "main": "fr.caemur.learndev.LearnDevPlugin",
+    "version": "2.0.0",
     "author": "1z2"
 }
