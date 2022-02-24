@@ -118,7 +118,10 @@ public class ConfigCommand extends Command {
             } else if (info.equalsIgnoreCase("img") || info.equalsIgnoreCase("image")) {
                 language.image = args[4];
             } else if (info.equalsIgnoreCase("rsc") || info.equalsIgnoreCase("resources")) {
-                language.resources = Arrays.asList(Arrays.copyOfRange(args, 4, args.length));
+                if (args[4].equalsIgnoreCase("clear"))
+                    language.resources.clear();
+                else
+                    language.resources = Arrays.asList(Arrays.copyOfRange(args, 4, args.length));
             } else if (info.equalsIgnoreCase("authors")) {
                 language.authors = Arrays.asList(Arrays.copyOfRange(args, 4, args.length));
             }
